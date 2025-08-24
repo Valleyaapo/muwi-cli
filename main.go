@@ -9,13 +9,9 @@ import (
 	"time"
 )
 
-func squareResult(n int) int {
-	return n * n
-}
-
 func main() {
 	now := time.Now()
-	fmt.Println(("Starting Fantom application..."))
+	fmt.Println(("Starting muwi application..."))
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
