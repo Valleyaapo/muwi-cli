@@ -5,7 +5,7 @@
 Learn safe multi-threaded go with concrete cli tool that can read data from local files 📚.  
 Future version possibly from external API to verify http threading ⚙️. 
 
-# Under constructions 👷‍♂️ 
+# Under constructions 👷‍♂️
 
 ## Features
 
