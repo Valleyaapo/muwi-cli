@@ -48,7 +48,7 @@ func orderEditor(ctx context.Context, orders <-chan Order) <-chan Order {
 					return
 				}
 				order.CustomerRating = cutFloat(order.CustomerRating)
-				order.AssemblyCost = cutFloat(order.AssemblyCost)
+				order.TotalAmount = cutFloat(order.TotalAmount)
 				editedOrders <- order
 			}
 		}
