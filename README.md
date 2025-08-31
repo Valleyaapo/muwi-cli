@@ -5,7 +5,7 @@
 Learn safe multi-threaded go with concrete cli tool that can read data from local files 📚.  
 Future version possibly from external API to verify http threading ⚙️. 
 
-# Under constructions 👷‍♂️ 
+# Under constructions 👷‍♂️
 
 ## Features
 
@@ -17,3 +17,5 @@ After fan-out the function fans-in the threads and creates a batch from items, s
 * goroutines
 * extensive use of channels
 * wait groupss
+
+CSV from [kaggle](https://www.kaggle.com/datasets/pratyushpuri/online-furniture-orders-delivery-and-assembly-2025)
