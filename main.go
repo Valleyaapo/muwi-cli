@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"math"
 	"runtime"
@@ -26,9 +27,17 @@ func main() {
 	f := fanIn(ctx, orderEditorChannels...)
 	batches := buffer(ctx, f, 2, 500*time.Millisecond)
 	items := takeItems(ctx, batches, 10)
-	for v := range items {
-		fmt.Println("One order: ", v)
+	db, err := sql.Open("sqlite", "file:muwi.db?_journal_mode=WAL&_busy_timeout=500")
+	if err != nil {
+		fmt.Print(err)
+		return
 	}
+	CreateDB(db)
+	for v := range items {
+		Insert(v, db)
+	}
+	Scan(db)
+	defer db.Close()
 	fmt.Printf("Took %s", time.Since(now))
 }
 
